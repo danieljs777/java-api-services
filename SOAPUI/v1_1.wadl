@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="http://sandbox.zillius.com/cmonecard/v1"/>
+  <resources base="http://179.124.44.8:8080/api-mock/api">
+    <resource path="lancamentos/vendas" id="Vendas">
+      <doc xml:lang="en" title="Vendas"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="App-Token" default="LICin04WKos8" type="xs:string" required="false" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <resource path="filiais" id="filiais">
+        <doc xml:lang="en" title="filiais"/>
+        <resource path="{id}" id="{id}">
+          <doc xml:lang="en" title="{id}"/>
+          <param name="id" default="id" type="xs:string" required="false" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <method name="GET" id="ObterAsVendasDeUmaFilial">
+            <doc xml:lang="en" title="ObterAsVendasDeUmaFilial"/>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json" element="ns:Response" xmlns:ns="http://localhost/zillius/api/lancamentos/vendas/filiais/1"/>
+            </response>
+            <response status="0">
+              <representation mediaType="" element="data"/>
+              <representation mediaType="" element="data"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="ObterTodasAsVendasPorFiliais">
+          <doc xml:lang="en" title="ObterTodasAsVendasPorFiliais"/>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json" element="Response"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="xht:html" xmlns:xht="http://www.w3.org/1999/xhtml"/>
+          </response>
+          <response status="400 500">
+            <representation mediaType="application/json" element="fil:Fault" xmlns:fil="http://localhost/zillius/api/lancamentos/vendas/filiais"/>
+          </response>
+          <response status="0">
+            <representation mediaType="" element="data"/>
+            <representation mediaType="" element="data"/>
+            <representation mediaType="" element="data"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="ObterTodasAsVendas">
+        <doc xml:lang="en" title="ObterTodasAsVendas"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="400 404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html;charset=ISO-8859-1"/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType="text/plain"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="400 404 422 500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="401">
+          <representation mediaType=""/>
+        </response>
+        <response status="504">
+          <representation mediaType=""/>
+        </response>
+        <response status="502">
+          <representation mediaType=""/>
+        </response>
+        <response status="503">
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="lancamentos/recebimentos" id="Recebimentos">
+      <doc xml:lang="en" title="Recebimentos"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <resource path="filiais" id="filiais">
+        <doc xml:lang="en" title="filiais"/>
+        <resource path="{id}" id="{id}">
+          <doc xml:lang="en" title="{id}"/>
+          <param name="id" default="id" type="xs:string" required="false" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <method name="GET" id="RecebimentosDeUmaFilial">
+            <doc xml:lang="en" title="RecebimentosDeUmaFilial"/>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json" element="ns:Response" xmlns:ns="http://localhost/zillius/api/lancamentos/recebimentos/filiais/1"/>
+            </response>
+            <response status="500">
+              <representation mediaType="text/html" element="xht:html" xmlns:xht="http://www.w3.org/1999/xhtml"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="ObterTodosRecebimentosPorFiliais">
+          <doc xml:lang="en" title="ObterTodosRecebimentosPorFiliais"/>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json" element="Response"/>
+          </response>
+          <response status="500">
+            <representation mediaType="application/json" element="fil:Fault" xmlns:fil="http://localhost/zillius/api/lancamentos/recebimentos/filiais"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="ObterTodosRecebimentos">
+        <doc xml:lang="en" title="ObterTodosRecebimentos"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="lancamentos/previsoes" id="previsoes">
+      <doc xml:lang="en" title="previsoes"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <resource path="filiais" id="filiais">
+        <doc xml:lang="en" title="filiais"/>
+        <resource path="{id}" id="{id}">
+          <doc xml:lang="en" title="{id}"/>
+          <param name="id" default="id" type="xs:string" required="false" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <method name="GET" id="Method 1">
+            <doc xml:lang="en" title="Method 1"/>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json" element="ns:Response" xmlns:ns="http://localhost/zillius/api/lancamentos/previsoes/filiais/1"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="PrevisoesPorFiliais">
+          <doc xml:lang="en" title="PrevisoesPorFiliais"/>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json" element="Response"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="TodasAsPrevisoes">
+        <doc xml:lang="en" title="TodasAsPrevisoes"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="conciliacoes/vendas" id="VendasConciliadas">
+      <doc xml:lang="en" title="VendasConciliadas"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <resource path="filiais" id="filiais">
+        <doc xml:lang="en" title="filiais"/>
+        <resource path="{id}" id="{id}">
+          <doc xml:lang="en" title="{id}"/>
+          <param name="id" default="id" type="xs:string" required="false" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="bandeira" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="statusConciliacao" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="limit" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="offset" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <method name="GET" id="VendasConciliadasDeUmaFilial">
+            <doc xml:lang="en" title="VendasConciliadasDeUmaFilial"/>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json" element="ns:Response" xmlns:ns="http://localhost/zillius/api/conciliacoes/vendas/filiais/1"/>
+            </response>
+            <response status="400 422 500">
+              <representation mediaType="application/json" element="ns:Fault" xmlns:ns="http://localhost/zillius/api/conciliacoes/vendas/filiais/1"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="VendasConciliadasPorFiliais">
+          <doc xml:lang="en" title="VendasConciliadasPorFiliais"/>
+          <request/>
+          <response status="404 500">
+            <representation mediaType="text/html" element="xht:html" xmlns:xht="http://www.w3.org/1999/xhtml"/>
+          </response>
+          <response status="200">
+            <representation mediaType="application/json" element="Response"/>
+          </response>
+          <response status="400 422">
+            <representation mediaType="application/json" element="fil:Fault" xmlns:fil="http://localhost/zillius/api/conciliacoes/vendas/filiais"/>
+          </response>
+          <response status="0">
+            <representation mediaType="" element="data"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="ObterTodasAsVendasConciliadas">
+        <doc xml:lang="en" title="ObterTodasAsVendasConciliadas"/>
+        <request/>
+        <response status="400 404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="422 500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="404">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="conciliacoes/recebimentos" id="RecebimentosConciliados">
+      <doc xml:lang="en" title="RecebimentosConciliados"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <resource path="filiais" id="filiais">
+        <doc xml:lang="en" title="filiais"/>
+        <resource path="{id}" id="{id}">
+          <doc xml:lang="en" title="{id}"/>
+          <param name="id" default="id" type="xs:string" required="false" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="limit" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <param name="offset" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+          <method name="GET" id="RecebimentoConciliadosDeUmaFilial">
+            <doc xml:lang="en" title="RecebimentoConciliadosDeUmaFilial"/>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json" element="ns:Response" xmlns:ns="http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1"/>
+            </response>
+            <response status="400 422">
+              <representation mediaType="application/json" element="ns:Fault" xmlns:ns="http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="RecebimentosConciliadosPorFiliais">
+          <doc xml:lang="en" title="RecebimentosConciliadosPorFiliais"/>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json" element="Response"/>
+          </response>
+          <response status="500">
+            <representation mediaType="text/html" element="xht:html" xmlns:xht="http://www.w3.org/1999/xhtml"/>
+          </response>
+          <response status="0">
+            <representation mediaType="" element="data"/>
+            <representation mediaType="" element="data"/>
+            <representation mediaType="" element="data"/>
+          </response>
+          <response status="400 404 422">
+            <representation mediaType="application/json" element="fil:Fault" xmlns:fil="http://localhost/zillius/api/conciliacoes/recebimentos/filiais"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="RecebimentosConciliados">
+        <doc xml:lang="en" title="RecebimentosConciliados"/>
+        <request/>
+        <response status="400 404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="404">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="retornos/vendas" id="RetornosVendas">
+      <doc xml:lang="en" title="RetornosVendas"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="limit" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="offset" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="tipoRetorno" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="lancamentoId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <method name="GET" id="Method 1">
+        <doc xml:lang="en" title="Method 1"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="400 404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="404 422 500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="504">
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+    <resource path="retornos/recebimentos" id="RetornosRecebimentos">
+      <doc xml:lang="en" title="RetornosRecebimentos"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="limit" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="offset" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="statusConciliacao" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="adquirente" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="bandeira" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="tipoRetorno" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <method name="GET" id="Method 1">
+        <doc xml:lang="en" title="Method 1"/>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="400 404 422 500">
+          <representation mediaType="application/json"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="filiais/taxas" id="taxas">
+      <doc xml:lang="en" title="taxas"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="clienteId" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataInicial" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <param name="dataFinal" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <method name="GET" id="Method 1">
+        <doc xml:lang="en" title="Method 1"/>
+        <request/>
+        <response status="404 405 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="200">
+          <representation mediaType="application/json"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="entradas/vendas" id="vendas">
+      <doc xml:lang="en" title="vendas"/>
+      <param name="App-Token" type="xs:string" required="false" default="" style="header" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+      <method name="POST" id="Method 1">
+        <doc xml:lang="en" title="Method 1"/>
+        <request>
+          <representation mediaType="application/json"/>
+        </request>
+        <response status="0">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+        <response status="">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="400 404 500">
+          <representation mediaType="text/html"/>
+        </response>
+        <response status="200">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html;charset=ISO-8859-1"/>
+          <representation mediaType=""/>
+        </response>
+        <response status="422 500">
+          <representation mediaType="application/json"/>
+        </response>
+        <response status="400 404">
+          <representation mediaType="text/plain"/>
+        </response>
+        <response status="504">
+          <representation mediaType=""/>
+        </response>
+        <response status="401">
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+          <representation mediaType=""/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

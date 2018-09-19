@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Gerar Pacote</actionName>
+            <displayName>Gerar Pacote</displayName>
+            <goals>
+                <goal>clean:clean</goal>
+                <goal>package</goal>
+            </goals>
+        </action>
+    </actions>

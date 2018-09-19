@@ -1,0 +1,5414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>http://sandbox.zillius.com/cmonecard/v1</title>
+<style type="text/css">
+                    body {
+                        font-family: sans-serif;
+                        font-size: 0.85em;
+                        margin: 2em 8em;
+                    }
+                    .methods {
+                        background-color: #ffffff;
+                        padding: 1em;
+						 }
+					pre {
+						border: dashed 1px;
+						border-color:#999999;
+						margin-left: 7px;
+						padding: 0.5em;
+						line-height: 150%;
+						font-family: monospace;
+						font-size: 12px;
+						color:#000;
+						}
+					a:link{
+						color: #333333;
+						font-family: Verdana, Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						}
+					a:visited{
+						color: #333333;
+						color: #333333;
+						font-family: Verdana, Arial, Helvetica, sans-serif;
+						}
+
+                    h1 {
+                        	margin: 0px 5px 5px; 
+							font: verdana,arial,helvetica;
+							color: #00cc33;
+							font-weight: normal;
+							font-size: 18.0pt;
+							font-weight: bold;
+                    }
+                    h2 {
+					    margin: 0px 0px 5px;  
+						font: verdana,arial,helvetica;
+						color: #00cc33;
+						font-weight: normal;
+						font-size: 14.0pt;
+						font-weight: bold;
+                       }
+                    h3 {
+						margin: 10px 0px 5px; 
+						font-weight: bold;
+						font-family: Verdana, Arial, Helvetica, sans-serif;
+						font-size:14px;
+						color: #00cc33;
+                    }
+                    h4 {
+                        margin: 0em;
+                        padding: 0em;
+                    }
+                    h6 {
+                        font-size: 1.1em;
+                        color: #99a;
+                        margin: 0.5em 0em 0.25em 0em;
+                    }
+                    dd {
+                        margin-left: 1em;
+                    }
+                    tt {
+                        font-size: 1.2em;
+                    }
+                    table {
+                        margin-bottom: 0.5em;
+                    }
+                    th {
+						font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+						font-weight: bold;
+						text-align:left;
+						padding: 5px;
+						background:#00cc33;
+						-moz-border-radius: ;
+						width=150px;
+                    }
+                    td {
+                        padding: 3px 6px;
+						font-weight: normal;
+                        vertical-align: top;
+                        background: #eeeeee;
+						font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+                    }
+                    td p {
+                        margin: 0px;
+						font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+                    }
+                    ul {
+                        padding-left: 1.75em;
+                    }
+					li {
+                        font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+                    }
+					
+
+                    p + ul, p + ol, p + dl {
+                        margin-top: 0em;
+						                        font-family: Arial, Helvetica, sans-serif;
+						font-size: 12px;
+                    }
+                    .optional {
+                        font-weight: normal;
+                        opacity: 0.75;
+                    }
+                </style>
+</head>
+<body>
+<h1>http://sandbox.zillius.com/cmonecard/v1</h1>
+<ul>
+<li>
+<a href="#resources">Resources</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#Vendas">http://179.124.44.8:8080/api-mock/api/lancamentos/vendas</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#filiais">http://179.124.44.8:8080/api-mock/api/lancamentos/vendas/filiais</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#{id}">http://179.124.44.8:8080/api-mock/api/lancamentos/vendas/filiais/{id}</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#Recebimentos">http://179.124.44.8:8080/api-mock/api/lancamentos/recebimentos</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#filiais">http://179.124.44.8:8080/api-mock/api/lancamentos/recebimentos/filiais</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#{id}">http://179.124.44.8:8080/api-mock/api/lancamentos/recebimentos/filiais/{id}</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#previsoes">http://179.124.44.8:8080/api-mock/api/lancamentos/previsoes</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#filiais">http://179.124.44.8:8080/api-mock/api/lancamentos/previsoes/filiais</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#{id}">http://179.124.44.8:8080/api-mock/api/lancamentos/previsoes/filiais/{id}</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#VendasConciliadas">http://179.124.44.8:8080/api-mock/api/conciliacoes/vendas</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#filiais">http://179.124.44.8:8080/api-mock/api/conciliacoes/vendas/filiais</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#{id}">http://179.124.44.8:8080/api-mock/api/conciliacoes/vendas/filiais/{id}</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#RecebimentosConciliados">http://179.124.44.8:8080/api-mock/api/conciliacoes/recebimentos</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#filiais">http://179.124.44.8:8080/api-mock/api/conciliacoes/recebimentos/filiais</a>
+<ul>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#{id}">http://179.124.44.8:8080/api-mock/api/conciliacoes/recebimentos/filiais/{id}</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#RetornosVendas">http://179.124.44.8:8080/api-mock/api/retornos/vendas</a>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#RetornosRecebimentos">http://179.124.44.8:8080/api-mock/api/retornos/recebimentos</a>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#taxas">http://179.124.44.8:8080/api-mock/api/filiais/taxas</a>
+</li>
+<li>
+<a href="#http://179.124.44.8:8080/api-mock/api#vendas">http://179.124.44.8:8080/api-mock/api/entradas/vendas</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#representations">Representations</a>
+<ul>
+<li>
+<a href="#N20055">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2005E">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20062">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20076">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2007E">Status Code 404 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</a>
+</li>
+<li>
+<a href="#N20087">Status Code 400 500 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais} Fault">fil:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N20090">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20094">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20098">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N200AC">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200B3">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200BA">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200BD">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200C0">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200C3">Status Code 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200DC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200DF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200E6">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200ED">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200F4">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200FB">Status Code 502 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20102">Status Code 503 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20155">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/recebimentos/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2015E">Status Code 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</a>
+</li>
+<li>
+<a href="#N20173">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2017B">Status Code 500 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/recebimentos/filiais} Fault">fil:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N20190">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20197">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2019E">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N201A5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N201F8">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/previsoes/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2020D">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20221">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20228">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2022F">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20236">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20239">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N202AC">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N202B5">Status Code 400 422 500 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais/1} Fault">ns:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N202CA">Status Code 404 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</a>
+</li>
+<li>
+<a href="#N202D3">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<li>
+<a href="#N202DB">Status Code 400 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais} Fault">fil:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N202E4">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N202F8">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N202FF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20306">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20309">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2030C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2030F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20312">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20315">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20318">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2031F">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20326">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20329">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2038C">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20395">Status Code 400 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1} Fault">ns:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N203AA">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<li>
+<a href="#N203B2">Status Code 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</a>
+</li>
+<li>
+<a href="#N203BB">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N203BF">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N203C3">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N203CB">Status Code 400 404 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais} Fault">fil:Fault</abbr>)</a>
+</li>
+<li>
+<a href="#N203E0">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203E7">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203EE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203FA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203FD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20400">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20403">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20406">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20409">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2040C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2040F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20412">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20415">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20418">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2041B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2041E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20425">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2042C">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2042F">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2047A">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20481">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20488">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20491">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20494">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20497">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2049A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2049D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204AC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204AF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B2">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B8">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204BB">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204BE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204DA">Status Code 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204E1">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2054C">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20553">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20556">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20559">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2055C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2055F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20562">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20565">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20568">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2056B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2056E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20571">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20574">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20577">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2057A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2057D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20580">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20583">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20586">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20589">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2058C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2058F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20596">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2059D">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N205D8">Status Code 404 405 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N205DF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N205FF">application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20606">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20609">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2060C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2060F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20612">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20615">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20618">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2061B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2061E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20621">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20624">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20627">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2062A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2062D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20630">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20633">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20636">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20639">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2063C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20643">Status Code  - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2064A">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20651">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20654">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20657">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2065A">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2065D">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20660">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20663">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20666">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20669">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2066C">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2066F">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20676">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20679">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20680">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20687">Status Code 400 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2068E">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20695">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20698">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2069B">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#Vendas">Vendas</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#ObterTodasAsVendas">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200AC">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200B3">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200BA">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200BD">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200C0">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200C3">Status Code 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200D9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200DC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N200DF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200E6">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200ED">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200F4">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N200FB">Status Code 502 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20102">Status Code 503 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#filiais">filiais</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#ObterTodasAsVendasPorFiliais">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20076">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2007E">Status Code 404 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20087">Status Code 400 500 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais} Fault">fil:Fault</abbr>)</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20090">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20094">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20098">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#{id}">{id}</h3>
+<h6>resource-wide template parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>id</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>id</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#ObterAsVendasDeUmaFilial">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20055">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais/1} Response">ns:Response</abbr>)</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2005E">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+<li>
+<a href="#N20062">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#Recebimentos">Recebimentos</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#ObterTodosRecebimentos">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20190">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20197">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2019E">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N201A5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#previsoes">previsoes</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#TodasAsPrevisoes">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20221">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20228">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2022F">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20236">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20239">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#VendasConciliadas">VendasConciliadas</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#ObterTodasAsVendasConciliadas">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N202F8">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N202FF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20306">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20309">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2030C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2030F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20312">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20315">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20318">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2031F">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20326">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20329">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#RecebimentosConciliados">RecebimentosConciliados</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#RecebimentosConciliados">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N203E0">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N203E7">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N203EE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203F7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203FA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N203FD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20400">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20403">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20406">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20409">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2040C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2040F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20412">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20415">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20418">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2041B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2041E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20425">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2042C">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2042F">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#RetornosVendas">RetornosVendas</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#Method 1">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>limit</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>offset</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>tipoRetorno</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>lancamentoId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2047A">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20481">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20488">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20491">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20494">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20497">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2049A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2049D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204A9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204AC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204AF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B2">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204B8">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204BB">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204BE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204C7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N204DA">Status Code 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N204E1">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#RetornosRecebimentos">RetornosRecebimentos</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#Method 1">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>limit</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>offset</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>statusConciliacao</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>adquirente</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>bandeira</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>tipoRetorno</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2054C">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20553">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20556">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20559">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2055C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2055F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20562">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20565">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20568">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2056B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2056E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20571">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20574">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20577">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2057A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2057D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20580">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20583">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20586">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20589">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2058C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2058F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20596">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2059D">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#taxas">taxas</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#Method 1">GET</h4>
+<h6>request query parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>clienteId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataInicial</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>dataFinal</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N205D8">Status Code 404 405 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N205DF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="http://179.124.44.8:8080/api-mock/api#vendas">vendas</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="http://179.124.44.8:8080/api-mock/api#Method 1">POST</h4>
+<h6>request header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>acceptable request representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N205FF">application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20606">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20609">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2060C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2060F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20612">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20615">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20618">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2061B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2061E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20621">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20624">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20627">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2062A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2062D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20630">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20633">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20636">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20639">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2063C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20643">Status Code  - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2064A">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20651">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20654">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20657">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2065A">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2065D">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20660">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20663">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20666">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20669">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2066C">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2066F">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20676">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20679">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20680">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20687">Status Code 400 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N2068E">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<h6>response header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<li>
+<a href="#N20695">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20698">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2069B">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="representations">Representations</h2>
+<h3 id="N20055">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais/1} Response">ns:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N2005E">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20062">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20076">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N2007E">Status Code 404 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20087">Status Code 400 500 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/vendas/filiais} Fault">fil:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20090">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20094">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20098">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt>LICin04WKos8</tt>
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N200AC">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200B3">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200BA">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200BD">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200C0">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200C3">Status Code 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200D6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200D9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200DC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200DF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200E6">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200ED">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200F4">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N200FB">Status Code 502 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20102">Status Code 503 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20155">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/recebimentos/filiais/1} Response">ns:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N2015E">Status Code 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20173">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N2017B">Status Code 500 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/recebimentos/filiais} Fault">fil:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20190">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20197">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2019E">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N201A5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N201F8">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/lancamentos/previsoes/filiais/1} Response">ns:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N2020D">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20221">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20228">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2022F">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20236">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20239">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N202AC">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais/1} Response">ns:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202B5">Status Code 400 422 500 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais/1} Fault">ns:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202CA">Status Code 404 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202D3">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202DB">Status Code 400 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/vendas/filiais} Fault">fil:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202E4">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N202F8">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N202FF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20306">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20309">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2030C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2030F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20312">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20315">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20318">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2031F">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20326">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20329">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2038C">Status Code 200 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1} Response">ns:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N20395">Status Code 400 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais/1} Fault">ns:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203AA">Status Code 200 - application/json (<abbr title="{http://wadl.dev.java.net/2009/02} ">Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203B2">Status Code 500 - text/html (<abbr title="{http://www.w3.org/1999/xhtml} html">xht:html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203BB">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203BF">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203C3">Status Code 0 -  (<abbr title="{http://wadl.dev.java.net/2009/02} ">data</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203CB">Status Code 400 404 422 - application/json (<abbr title="{http://localhost/zillius/api/conciliacoes/recebimentos/filiais} Fault">fil:Fault</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source: <a href="" />
+</em>
+</p>
+<pre />
+<h6> header parameters</h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>App-Token</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default: <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+</div>
+<h3 id="N203E0">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203E7">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203EE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203F1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203F4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203F7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203FA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N203FD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20400">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20403">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20406">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20409">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2040C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2040F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20412">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20415">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20418">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2041B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2041E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20425">Status Code 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2042C">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2042F">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2047A">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20481">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20488">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2048B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2048E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20491">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20494">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20497">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2049A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2049D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204A0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204A3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204A6">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204A9">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204AC">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204AF">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204B2">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204B5">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204B8">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204BB">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204BE">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204C1">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204C4">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204C7">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204CA">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204CD">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204D0">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204D3">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204DA">Status Code 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204E1">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2054C">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20553">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20556">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20559">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2055C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2055F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20562">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20565">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20568">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2056B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2056E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20571">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20574">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20577">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2057A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2057D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20580">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20583">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20586">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20589">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2058C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2058F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20596">Status Code 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2059D">Status Code 400 404 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N205D8">Status Code 404 405 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N205DF">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N205FF">application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20606">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20609">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2060C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2060F">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20612">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20615">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20618">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2061B">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2061E">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20621">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20624">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20627">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2062A">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2062D">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20630">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20633">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20636">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20639">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2063C">Status Code 0 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20643">Status Code  - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2064A">Status Code 400 404 500 - text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20651">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20654">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20657">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2065A">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2065D">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20660">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20663">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20666">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20669">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2066C">Status Code 200 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2066F">Status Code 200 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20676">Status Code 404 - text/html;charset=ISO-8859-1<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20679">Status Code 404 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20680">Status Code 422 500 - application/json<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20687">Status Code 400 404 - text/plain<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2068E">Status Code 504 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20695">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20698">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2069B">Status Code 401 - <abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+</body>
+</html>
